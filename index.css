@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Outside container */
+#content-box {
+    width: 500px;
+    height: 500px;
+    border: 10px solid lightgray;
+    border-radius: 10px;
+
+    background-color: lightgoldenrodyellow;
+    
+    /* to centre the content box */
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+/* Left container to display Digimon Info */
+#left-box {
+    width: 250px;
+    height: 500px;
+    background-color: aliceblue;
+}
+
+/* Right container to display Digimon list */
+#digimon-list {
+    width: 250px;
+    height: 500px;
+    background-color: lavenderblush;
+}
