@@ -17,7 +17,7 @@ body {
 }
 
 /* Left container to display Digimon Info */
-#left-box {
+#left-digimon-info {
     width: 250px;
     height: 500px;
     background-color: aliceblue;
