@@ -4,8 +4,8 @@ body {
 
 /* Outside container */
 #content-box {
-    width: 500px;
-    height: 500px;
+    width: 80%;
+    height: 800px;
     border: 10px solid lightgray;
     border-radius: 10px;
 
@@ -13,19 +13,21 @@ body {
     
     /* to centre the content box */
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    display: flex;
 }
 
 /* Left container to display Digimon Info */
 #left-digimon-info {
-    width: 250px;
-    height: 500px;
+    width: 50%;
+    height: 800px;
     background-color: aliceblue;
 }
 
 /* Right container to display Digimon list */
 #digimon-list {
-    width: 250px;
-    height: 500px;
+    width: 50%;
+    height: 800px;
     background-color: lavenderblush;
 }
