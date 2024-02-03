@@ -21,13 +21,16 @@ body {
 /* Left container to display Digimon Info */
 #left-digimon-info {
     width: 50%;
-    height: 800px;
+    height: 780px;
     background-color: aliceblue;
 }
 
 /* Right container to display Digimon list */
 #digimon-list {
     width: 50%;
-    height: 800px;
+    height: 780px;
     background-color: lavenderblush;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
