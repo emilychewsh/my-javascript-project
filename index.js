@@ -7,6 +7,7 @@ async function initialise() {
 
     digimons.forEach(element => {
       const btn = document.createElement("button")
+      btn.className = "digimonNameList"
       btn.innerText = element.name
       btn.id = element.id
       btn.addEventListener("click", getDigimon)
@@ -25,7 +26,7 @@ function getDigimon(event){
   .then(response => response.json())
   .then((data) => {
     console.log(data)
-    const imageElement =  document.createElement("img")
+    const imageElement = document.createElement("img")
     imageElement.src = data.images[0].href
     const imageContainer = document.querySelector("#image-container")
     imageContainer.innerHTML = ""
@@ -46,6 +47,6 @@ async function fetch100Digimons(){
     const digimonData = await response.json()
     const digimons = digimonData.content
     return digimons
-    console.log(digimonData)
+    // console.log(digimons)
 }
 

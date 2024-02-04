@@ -33,4 +33,14 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    font-size: x-large;
+}
+
+.digimonNameList {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
 }
