@@ -31,13 +31,16 @@ function getDigimon(event){
     const imageContainer = document.querySelector("#image-container")
     imageContainer.innerHTML = ""
     imageContainer.appendChild(imageElement)
-    renderInfo(data)
+    renderDigimonTypes(data)
 
   })
 }
 
-function renderInfo(object){
-  
+function renderDigimonTypes(object){
+  const digimonType = object.types[0].type
+  const digimonTypeBox = document.querySelector(".type-box-type")
+  digimonTypeBox.innerHTML = ""
+  digimonTypeBox.append(digimonType)
 }
 
 
