@@ -43,6 +43,7 @@ function getDigimon(event){
     renderDigimonTypes(data)
     renderDigimonAttributes(data)
     renderDigimonDesc(data)
+    renderDigimonYear(data)
     
   })
 }
@@ -71,7 +72,24 @@ function renderDigimonDesc(object){
   digimonDescBox.append(digimonDesc)
 }
 
+function renderDigimonYear(object){
+  const digimonYear = object.releaseDate
+  const digimonYearBox = document.querySelector("#yearReleased")
+  digimonYearBox.innerHTML = "Year Released: " + ""
+  digimonYearBox.append(digimonYear)
+}
+
 //filter digimons
+// function searchDigimon(object){
+//   const digimonName = object.name
+//   const term = document.querySelector("#input").value
+//   document.addEventListener("keyup", ()=>{
+//     if (term == digimonName){
+//       console.log(digimonName)
+//     }
+//   })
+// }
+
 
 // const searchBar = document.querySelector("input.form-control").value
 

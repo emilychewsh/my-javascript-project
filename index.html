@@ -16,7 +16,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-        
+
         <!-- Javascript from index.js and Bootstrap, jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="index.js" defer></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -29,7 +29,7 @@
         <!-- Nav Bar with Search box Bootstrap -->
         <nav class="navbar navbar-light bg-light">
             <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <input id="input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </nav>
@@ -38,6 +38,7 @@
             <!-- Left container to display Digimon Info -->
             <div id="left-digimon-info">
                 <div id="image-container"></div>
+                <span id="yearReleased"></span>
                 <div id="digimon-types">
                     <span id="type-box-type" class="type-box"></span><span id="type-box-attribute" class="type-box"></span>
                 </div>
