@@ -16,6 +16,14 @@ async function initialise() {
 
 }
 
+async function fetch100Digimons(){
+  const url = "https://digi-api.com/api/v1/digimon?pageSize=100"
+  const response = await fetch (url)
+  const digimonData = await response.json()
+  const digimons = digimonData.content
+  return digimons
+  // console.log(digimons)
+}
 
 function getDigimon(event){
   let url = "https://digi-api.com/api/v1/digimon/"
@@ -31,25 +39,23 @@ function getDigimon(event){
     const imageContainer = document.querySelector("#image-container")
     imageContainer.innerHTML = ""
     imageContainer.appendChild(imageElement)
+    
     renderDigimonTypes(data)
-
+    renderDigimonAttributes(data)
   })
 }
 
 function renderDigimonTypes(object){
   const digimonType = object.types[0].type
-  const digimonTypeBox = document.querySelector(".type-box-type")
+  const digimonTypeBox = document.querySelector("#type-box-type")
   digimonTypeBox.innerHTML = ""
   digimonTypeBox.append(digimonType)
 }
 
-
-async function fetch100Digimons(){
-    const url = "https://digi-api.com/api/v1/digimon?pageSize=100"
-    const response = await fetch (url)
-    const digimonData = await response.json()
-    const digimons = digimonData.content
-    return digimons
-    // console.log(digimons)
+function renderDigimonAttributes(object){
+  const digimonAttributes = object.attributes[0].attribute
+  console.log(digimonAttributes)
+  const digimonAttributeBox = document.querySelector("#type-box-attribute")
+  digimonAttributeBox.innerHTML = ""
+  digimonAttributeBox.append(digimonAttributes)
 }
-
