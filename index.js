@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", initialise);
 
 const digimonList = document.querySelector("#digimon-list")
 
+let digimonNames = []
+
 async function initialise() {
     const digimons = await fetch100Digimons()
 
@@ -12,6 +14,8 @@ async function initialise() {
       btn.id = element.id
       btn.addEventListener("click", getDigimon)
       digimonList.appendChild(btn)
+      
+      digimonNames.push(element.name)
     });
 
 }
@@ -33,7 +37,7 @@ function getDigimon(event){
 
   .then(response => response.json())
   .then((data) => {
-    console.log(data)
+    // console.log(data)
     const imageElement = document.createElement("img")
     imageElement.src = data.images[0].href
     const imageContainer = document.querySelector("#image-container")
@@ -57,19 +61,23 @@ function renderDigimonTypes(object){
 
 function renderDigimonAttributes(object){
   const digimonAttributes = object.attributes[0].attribute
-  console.log(digimonAttributes)
+  // console.log(digimonAttributes)
   const digimonAttributeBox = document.querySelector("#type-box-attribute")
   digimonAttributeBox.innerHTML = "Attribute: " + ""
   digimonAttributeBox.append(digimonAttributes)
 }
 
 function renderDigimonDesc(object){
-  const digimonDesc = object.descriptions[0].description
-  console.log(digimonDesc)
+  console.log(object)
+  const englishDesc = object.descriptions.find((desc) =>{
+    return desc.language === "en_us"
+  })
 
   const digimonDescBox = document.querySelector("#digimon-description")
+  const digimonParagraph = document.createElement("p")
+  digimonParagraph.textContent = englishDesc.description
   digimonDescBox.innerHTML = ""
-  digimonDescBox.append(digimonDesc)
+  digimonDescBox.append(digimonParagraph)
 }
 
 function renderDigimonYear(object){
@@ -77,6 +85,19 @@ function renderDigimonYear(object){
   const digimonYearBox = document.querySelector("#yearReleased")
   digimonYearBox.innerHTML = "Year Released: " + ""
   digimonYearBox.append(digimonYear)
+}
+
+const input = document.querySelector("#input")
+input.addEventListener("input", searchDigimon)
+
+function searchDigimon(event){
+  console.log(event.target.value)
+  const matchName = digimonNames.find((name) =>{
+    return name.toLowerCase().includes(event.target.value.toLowerCase())
+  })
+  if (matchName != undefined){
+    event.target.after(matchName)
+  }
 }
 
 //filter digimons

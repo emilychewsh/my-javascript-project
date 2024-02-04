@@ -1,6 +1,6 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url(images/digimon-reunion.jpeg);
+    background-image: url(images/digimon-background.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Roboto', sans-serif;
@@ -69,9 +69,7 @@ h1 {
     border-radius: 10px;
     padding: 10px;
     background-color: white;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
+    overflow-y: auto
 }
 
 /* Right container to display Digimon list */
