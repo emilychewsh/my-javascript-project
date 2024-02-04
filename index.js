@@ -42,13 +42,14 @@ function getDigimon(event){
     
     renderDigimonTypes(data)
     renderDigimonAttributes(data)
+    renderDigimonDesc(data)
   })
 }
 
 function renderDigimonTypes(object){
   const digimonType = object.types[0].type
   const digimonTypeBox = document.querySelector("#type-box-type")
-  digimonTypeBox.innerHTML = ""
+  digimonTypeBox.innerHTML = "Type: " + ""
   digimonTypeBox.append(digimonType)
 }
 
@@ -56,6 +57,15 @@ function renderDigimonAttributes(object){
   const digimonAttributes = object.attributes[0].attribute
   console.log(digimonAttributes)
   const digimonAttributeBox = document.querySelector("#type-box-attribute")
-  digimonAttributeBox.innerHTML = ""
+  digimonAttributeBox.innerHTML = "Attribute: " + ""
   digimonAttributeBox.append(digimonAttributes)
 }
+
+function renderDigimonDesc(object){
+  const digimonDesc = object.descriptions[0].description
+  console.log(digimonDesc)
+
+  const digimonDescBox = document.querySelector("#digimon-description")
+  digimonDescBox.innerHTML = ""
+  digimonDescBox.append(digimonDesc)
+  }
