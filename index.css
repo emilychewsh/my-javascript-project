@@ -1,16 +1,23 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
+    background-image: url(images/digimon-reunion.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
 }
 
+h1 {
+    background-color: white;
+    text-align: center;
+}
 /* Outside container */
 #content-box {
     width: 80%;
     height: 800px;
     border: 10px solid lightgray;
     border-radius: 10px;
-
-    background-color: lightgoldenrodyellow;
     
+    background-color: rgba(255, 255, 255, 0.5);
     /* to centre the content box */
     margin: 0 auto;
     margin-top: 50px;
@@ -22,8 +29,8 @@ body {
 #left-digimon-info {
     width: 50%;
     height: 780px;
-    background-color: aliceblue;
     text-align: center;
+
 }
 
 #left-digimon-info img {
@@ -52,13 +59,13 @@ body {
     border-radius: 10px;
     padding: 10px;
     background-color: white;
+    overflow-y: auto;
 }
 
 /* Right container to display Digimon list */
 #digimon-list {
     width: 50%;
     height: 780px;
-    background-color: lavenderblush;
     overflow-y: auto;
     display: flex;
     flex-direction: column;

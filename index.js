@@ -43,6 +43,7 @@ function getDigimon(event){
     renderDigimonTypes(data)
     renderDigimonAttributes(data)
     renderDigimonDesc(data)
+    
   })
 }
 
@@ -68,4 +69,22 @@ function renderDigimonDesc(object){
   const digimonDescBox = document.querySelector("#digimon-description")
   digimonDescBox.innerHTML = ""
   digimonDescBox.append(digimonDesc)
-  }
+}
+
+//filter digimons
+
+// const searchBar = document.querySelector("input.form-control").value
+
+// searchBar.addEventListener("keyup", function(e){
+//   const term = e.target.value.toLowerCase()
+
+//   const digimons = document.querySelectorAll(".digimonNameList")
+//   Array.from(digimons).forEach(function(digimon){
+//     const name = digimon.firstElementChild.textContent
+//     if(name.toLowerCase().indexOf(term) != -1){
+//       digimon.style.display = "block"
+//     } else {
+//       digimon.style.display = "none"
+//     }
+//   })
+// })
