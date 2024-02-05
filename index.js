@@ -2,25 +2,44 @@ document.addEventListener("DOMContentLoaded", initialise);
 
 const digimonList = document.querySelector("#digimon-list")
 
-// let digimonNames = []
-
-
 // Initialise async function
 // Creating Scrollable 100 Digimon names on Right of page, Add event listener on button names + get Digimon Data
 async function initialise() {
     const digimons = await fetch100Digimons()
-
-    digimons.forEach(element => {
+    
+    let filterDigimons = [...digimons]
+  
+    const FilteredDigimonData = () => {
+    filterDigimons.forEach(element => {
       const btn = document.createElement("button")
       btn.className = "digimonNameList"
       btn.innerText = element.name
       btn.id = element.id
       btn.addEventListener("click", getDigimon)
       digimonList.appendChild(btn)
-      
-      // digimonNames.push(element.name)
     });
+    }
+    FilteredDigimonData()
 
+    // Search digimon in search bar
+    const searchInput = document.querySelector("#input")
+    const searchBtn = document.querySelector("#searchBtn")
+
+    searchBtn.addEventListener("click", () => {
+    filterDigimons = digimons.filter((digimon) => {
+      return digimon.name.toLowerCase().includes(searchInput.value.toLowerCase())
+    })
+    digimonList.innerHTML = ""
+    FilteredDigimonData()
+    })
+
+    // Refresh Button to reset scroll bar on the right
+    const refreshBtn = document.querySelector("#refreshBtn")
+    refreshBtn.addEventListener("click", () => {
+      filterDigimons = [...digimons]
+      digimonList.innerHTML = ""
+      FilteredDigimonData()
+    })
 }
 
 //Fetching 100 Digimon Data from external API 
@@ -36,7 +55,7 @@ async function fetch100Digimons(){
 // Rendering ALL Digimon Data once clicked on the scrollable Digimon names 
 function getDigimon(event){
   let url = "https://digi-api.com/api/v1/digimon/"
-  console.log(event.target)
+  // console.log(event.target)
   let digimonId = event.target.id
   let digimonData = fetch(url + digimonId)
 
@@ -95,51 +114,3 @@ function renderDigimonYear(object){
   digimonYearBox.innerHTML = "Year Released: " + ""
   digimonYearBox.append(digimonYear)
 }
-
-
-// Search of digimon in search bar
-
-
-
-// const input = document.querySelector("#input")
-// input.addEventListener("input", searchDigimon)
-
-// function searchDigimon(event){
-//   console.log(event.target.value)
-//   const matchName = digimonNames.find((name) =>{
-//     return name.toLowerCase().includes(event.target.value.toLowerCase())
-//   })
-//   if (matchName != undefined){
-//     event.target.after(matchName)
-//   }
-// }
-
-
-
-//filter digimons
-// function searchDigimon(object){
-//   const digimonName = object.name
-//   const term = document.querySelector("#input").value
-//   document.addEventListener("keyup", ()=>{
-//     if (term == digimonName){
-//       console.log(digimonName)
-//     }
-//   })
-// }
-
-
-// const searchBar = document.querySelector("input.form-control").value
-
-// searchBar.addEventListener("keyup", function(e){
-//   const term = e.target.value.toLowerCase()
-
-//   const digimons = document.querySelectorAll(".digimonNameList")
-//   Array.from(digimons).forEach(function(digimon){
-//     const name = digimon.firstElementChild.textContent
-//     if(name.toLowerCase().indexOf(term) != -1){
-//       digimon.style.display = "block"
-//     } else {
-//       digimon.style.display = "none"
-//     }
-//   })
-// })
