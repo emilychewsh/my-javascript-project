@@ -2,8 +2,11 @@ document.addEventListener("DOMContentLoaded", initialise);
 
 const digimonList = document.querySelector("#digimon-list")
 
-let digimonNames = []
+// let digimonNames = []
 
+
+// Initialise async function
+// Creating Scrollable 100 Digimon names on Right of page, Add event listener on button names + get Digimon Data
 async function initialise() {
     const digimons = await fetch100Digimons()
 
@@ -15,11 +18,12 @@ async function initialise() {
       btn.addEventListener("click", getDigimon)
       digimonList.appendChild(btn)
       
-      digimonNames.push(element.name)
+      // digimonNames.push(element.name)
     });
 
 }
 
+//Fetching 100 Digimon Data from external API 
 async function fetch100Digimons(){
   const url = "https://digi-api.com/api/v1/digimon?pageSize=100"
   const response = await fetch (url)
@@ -29,6 +33,7 @@ async function fetch100Digimons(){
   // console.log(digimons)
 }
 
+// Rendering ALL Digimon Data once clicked on the scrollable Digimon names 
 function getDigimon(event){
   let url = "https://digi-api.com/api/v1/digimon/"
   console.log(event.target)
@@ -52,6 +57,7 @@ function getDigimon(event){
   })
 }
 
+//Fx for rendering Types
 function renderDigimonTypes(object){
   const digimonType = object.types[0].type
   const digimonTypeBox = document.querySelector("#type-box-type")
@@ -59,6 +65,7 @@ function renderDigimonTypes(object){
   digimonTypeBox.append(digimonType)
 }
 
+//Fx for rendering Attributes
 function renderDigimonAttributes(object){
   const digimonAttributes = object.attributes[0].attribute
   // console.log(digimonAttributes)
@@ -67,6 +74,7 @@ function renderDigimonAttributes(object){
   digimonAttributeBox.append(digimonAttributes)
 }
 
+//Fx for rendering Description and find method to look for only english description
 function renderDigimonDesc(object){
   console.log(object)
   const englishDesc = object.descriptions.find((desc) =>{
@@ -80,6 +88,7 @@ function renderDigimonDesc(object){
   digimonDescBox.append(digimonParagraph)
 }
 
+//Fx for rendering Digimon Year
 function renderDigimonYear(object){
   const digimonYear = object.releaseDate
   const digimonYearBox = document.querySelector("#yearReleased")
@@ -87,18 +96,25 @@ function renderDigimonYear(object){
   digimonYearBox.append(digimonYear)
 }
 
-const input = document.querySelector("#input")
-input.addEventListener("input", searchDigimon)
 
-function searchDigimon(event){
-  console.log(event.target.value)
-  const matchName = digimonNames.find((name) =>{
-    return name.toLowerCase().includes(event.target.value.toLowerCase())
-  })
-  if (matchName != undefined){
-    event.target.after(matchName)
-  }
-}
+// Search of digimon in search bar
+
+
+
+// const input = document.querySelector("#input")
+// input.addEventListener("input", searchDigimon)
+
+// function searchDigimon(event){
+//   console.log(event.target.value)
+//   const matchName = digimonNames.find((name) =>{
+//     return name.toLowerCase().includes(event.target.value.toLowerCase())
+//   })
+//   if (matchName != undefined){
+//     event.target.after(matchName)
+//   }
+// }
+
+
 
 //filter digimons
 // function searchDigimon(object){
