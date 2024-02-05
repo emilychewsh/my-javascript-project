@@ -4,6 +4,7 @@ It uses HTML, CSS & JS to create a Single Page Application.
 
 This is a Digimon Dex that will display the first 100 Digimon Infos sourced from an external free public API 
 Free Digimon API: https://digi-api.com/ 
+
 Data extracted from endpoint: https://digi-api.com/api/v1/digimon?pageSize=100 
 
 
