@@ -8,7 +8,7 @@ body {
 
 /* Logo header */
 #header-container {
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.5);
     text-align: center;
     padding-bottom: 5px;
 }
