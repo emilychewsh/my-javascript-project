@@ -125,3 +125,17 @@ function renderDigimonYear(object){
   digimonYearBox.innerHTML = "Year Released: " + ""
   digimonYearBox.append(digimonYear)
 }
+
+// function renderDigimonYear(object){
+  
+//   const digimonYearText = document.createElement("p")
+//   digimonYearText.src = object.releaseDate
+
+//   const digimonYearContainer = document.querySelector("#digimon-year-container")
+
+//   digimonYearContainer.innerHTML = "Year Released: " + ""
+//   digimonYearContainer.append(digimonYearText)
+
+//   digimonYearContainer.appendChild(digimonYearText)
+  
+// }

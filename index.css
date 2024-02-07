@@ -17,8 +17,8 @@ body {
 nav.navbar {
     /* margin-top: -8px; */
     border-top: rgb(211, 211, 211, 0.5) solid;
-    border-bottom: rgb(211, 211, 211, 0.5) solid;
-    /* background-color: rgb(255, 255, 255, 0.5);  */
+    /* border-bottom: rgb(211, 211, 211, 0.5) solid; */
+    background-color: rgb(255, 255, 255, 0.8); 
 }
 
 /* Buttons */
@@ -26,6 +26,13 @@ nav.navbar {
     float: right;
 }
 
+#searchBtn {
+    margin-right: 10px;
+}
+
+#refreshBtn {
+    margin-right: 10px;
+}
 
 /* Outside container */
 #content-box {
@@ -42,6 +49,7 @@ nav.navbar {
     margin-bottom: 50px;
     display: flex;
 }
+
 
 /* Left container to display Digimon Info */
 #left-digimon-info {
