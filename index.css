@@ -10,21 +10,30 @@ body {
 #header-container {
     background-color: rgb(255, 255, 255, 0.5);
     text-align: center;
-    padding-bottom: 5px;
+    padding-top: 10px;;
 }
 
 /* Navigation Bar */
 nav.navbar {
-    margin-top: -8px;
-    border-top: lightgray solid;
-    border-bottom: lightgray solid;
+    /* margin-top: -8px; */
+    border-top: rgb(211, 211, 211, 0.5) solid;
+    border-bottom: rgb(211, 211, 211, 0.5) solid;
+    /* background-color: rgb(255, 255, 255, 0.5);  */
 }
+
+/* Buttons */
+#sortBtn {
+    float: right;
+}
+
+
 /* Outside container */
 #content-box {
     width: 80%;
     height: 800px;
-    border: 10px solid lightgray;
+    border: 5px solid lightgray;
     border-radius: 10px;
+    border-color:rgba(177, 222, 235);
     
     background-color: rgba(255, 255, 255, 0.5);
     /* to centre the content box */
