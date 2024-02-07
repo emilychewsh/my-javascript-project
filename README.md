@@ -9,4 +9,4 @@ Data extracted from endpoint: https://digi-api.com/api/v1/digimon?pageSize=100
 
 Please note: DAPI is an free Digimon API, it uses data from official and fan based sources (mainly Wikimon.net). DAPI is not affiliated with nor claims ownership to material produced by Bandai.
 
-Background image is sourced from https://www.deviantart.com/greenmapple17/art/Digimon-Adventure-Tri-Minimalist-Wallpaper-533783505 
+Credit: Background image is sourced from https://www.deviantart.com/greenmapple17/art/Digimon-Adventure-Tri-Minimalist-Wallpaper-533783505 

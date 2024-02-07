@@ -3,12 +3,14 @@ document.addEventListener("DOMContentLoaded", initialise);
 const digimonList = document.querySelector("#digimon-list")
 
 // Initialise async function
-// Creating Scrollable 100 Digimon names on Right of page, Add event listener on button names + get Digimon Data
+// Creating Scrollable 100 Digimon names on Right of page 
 async function initialise() {
     const digimons = await fetch100Digimons()
     
+    //Array to be manipulated 
     let filterDigimons = [...digimons]
-  
+
+    //Function = Add event listener on button names + get Digimon Data
     const FilteredDigimonData = () => {
     filterDigimons.forEach(element => {
       const btn = document.createElement("button")
@@ -40,6 +42,16 @@ async function initialise() {
       digimonList.innerHTML = ""
       FilteredDigimonData()
     })
+
+    const sortAscendingBtn = document.querySelector("#sortAscendingBtn")
+    sortAscendingBtn.addEventListener("click", () => {
+      filterDigimons = digimons.filter((digimon) => {
+        return digimon.name.sort()
+      })
+      digimonList.innerHTML = ""
+      FilteredDigimonData()
+    })
+
 }
 
 //Fetching 100 Digimon Data from external API 
