@@ -43,13 +43,12 @@ async function initialise() {
       FilteredDigimonData()
     })
 
+    //Sort Digimon in Ascending order
     const sortAscendingBtn = document.querySelector("#sortAscendingBtn")
     sortAscendingBtn.addEventListener("click", () => {
-      filterDigimons = digimons.filter((digimon) => {
-        return digimon.name.sort()
-      })
-      digimonList.innerHTML = ""
-      FilteredDigimonData()
+        filterDigimons = [...digimons]
+        console.log(filterDigimons.sort(digimon => digimon.name))
+        FilteredDigimonData()
     })
 
 }

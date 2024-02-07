@@ -6,9 +6,18 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-h1 {
+/* Logo header */
+#header-container {
     background-color: white;
     text-align: center;
+    padding-bottom: 5px;
+}
+
+/* Navigation Bar */
+nav.navbar {
+    margin-top: -8px;
+    border-top: lightgray solid;
+    border-bottom: lightgray solid;
 }
 /* Outside container */
 #content-box {
@@ -90,4 +99,9 @@ h1 {
     margin: 5px;
     padding: 5px;
     text-align: center;
+    background-color: rgba(177, 222, 235, 0.8);
+}
+
+.digimonNameList:focus {
+    background-color: white;
 }
