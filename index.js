@@ -12,7 +12,8 @@ async function initialise() {
 
     //Function = Add event listener on button names + get Digimon Data
     const FilteredDigimonData = () => {
-    filterDigimons.forEach(element => {
+      digimonList.innerHTML = ""
+      filterDigimons.forEach(element => {
       const btn = document.createElement("button")
       btn.className = "digimonNameList"
       btn.innerText = element.name
@@ -46,9 +47,20 @@ async function initialise() {
     //Sort Digimon in Ascending order
     const sortAscendingBtn = document.querySelector("#sortAscendingBtn")
     sortAscendingBtn.addEventListener("click", () => {
-        filterDigimons = [...digimons]
-        console.log(filterDigimons.sort(digimon => digimon.name))
+        // console.log(filterDigimons.sort(digimon => digimon.name))
+        filterDigimons.sort((a, b) => {
+          return a.name.localeCompare(b.name)
+        })
         FilteredDigimonData()
+    })
+
+    //Sort Digimon in Descending Order
+    const sortDescendingBtn = document.querySelector("#sortDescendingBtn")
+    sortDescendingBtn.addEventListener("click", () => {
+      filterDigimons.sort((a, b) => {
+        return b.name.localeCompare(a.name)
+      })
+      FilteredDigimonData()
     })
 
 }
@@ -77,13 +89,21 @@ function getDigimon(event){
     imageElement.src = data.images[0].href
     const imageContainer = document.querySelector("#image-container")
     imageContainer.innerHTML = ""
+    // let current_rotation = 0 ;
+    // imageContainer.addEventListener("dblclick", () => {
+    //   current_rotation += 180;
+    //   imageContainer.style.transform = 'rotate(' + current_rotation + 'deg)'
+    // })
     imageContainer.appendChild(imageElement)
-    
+
     renderDigimonTypes(data)
     renderDigimonAttributes(data)
     renderDigimonDesc(data)
     renderDigimonYear(data)
     
+    //To remove display box on left unless clicked
+    const digimonInfoLeftContainer = document.querySelector("#left-digimon-info")
+    digimonInfoLeftContainer.classList.remove("none")
   })
 }
 
@@ -120,9 +140,9 @@ function renderDigimonDesc(object){
 
 //Fx for rendering Digimon Year
 function renderDigimonYear(object){
-  const digimonYear = object.releaseDate
   const digimonYearBox = document.querySelector("#yearReleased")
-  digimonYearBox.innerHTML = "Year Released: " + ""
+  const digimonYear = object.releaseDate
+  digimonYearBox.innerHTML = "Year Released: " + "" 
   digimonYearBox.append(digimonYear)
 }
 

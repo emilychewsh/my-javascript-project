@@ -59,6 +59,10 @@ nav.navbar {
 
 }
 
+.none {
+    opacity: 0;
+}
+
 #left-digimon-info img {
     width: 300px;
     height: 300px;
@@ -76,6 +80,8 @@ nav.navbar {
     background-color: white;
     font-weight: bold;
     display: flex;
+    width: 30%;
+    margin-left: 35%;
 }
 
 /* Left Digimon-types styling */
@@ -96,6 +102,7 @@ nav.navbar {
     padding: 10px;
     background-color: white;
     overflow-y: auto;
+    max-height: 280px;
 }
 
 
@@ -121,4 +128,12 @@ nav.navbar {
 
 .digimonNameList:focus {
     background-color: white;
+}
+
+.digimonNameList:hover {
+    background-color: brown;
+}
+
+.digimonNameList:active {
+    background-color: blueviolet;
 }
