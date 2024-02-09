@@ -24,6 +24,7 @@ async function initialise() {
     }
     FilteredDigimonData()
 
+
     // Search digimon in search bar
     const searchInput = document.querySelector("#input")
     const searchBtn = document.querySelector("#searchBtn")
@@ -89,22 +90,26 @@ function getDigimon(event){
     imageElement.src = data.images[0].href
     const imageContainer = document.querySelector("#image-container")
     imageContainer.innerHTML = ""
-    // let current_rotation = 0 ;
-    // imageContainer.addEventListener("dblclick", () => {
-    //   current_rotation += 180;
-    //   imageContainer.style.transform = 'rotate(' + current_rotation + 'deg)'
-    // })
     imageContainer.appendChild(imageElement)
 
     renderDigimonTypes(data)
     renderDigimonAttributes(data)
     renderDigimonDesc(data)
     renderDigimonYear(data)
-    
+    renderDigimonName(data)
+
     //To remove display box on left unless clicked
     const digimonInfoLeftContainer = document.querySelector("#left-digimon-info")
     digimonInfoLeftContainer.classList.remove("none")
   })
+}
+
+function renderDigimonName (object) {
+  const digimonName = object.name
+  console.log(object)
+  const digimonNameContainer = document.querySelector("#digimonName")
+  digimonNameContainer.innerHTML = ""
+  digimonNameContainer.append(digimonName)
 }
 
 //Fx for rendering Types
@@ -145,17 +150,3 @@ function renderDigimonYear(object){
   digimonYearBox.innerHTML = "Year Released: " + "" 
   digimonYearBox.append(digimonYear)
 }
-
-// function renderDigimonYear(object){
-  
-//   const digimonYearText = document.createElement("p")
-//   digimonYearText.src = object.releaseDate
-
-//   const digimonYearContainer = document.querySelector("#digimon-year-container")
-
-//   digimonYearContainer.innerHTML = "Year Released: " + ""
-//   digimonYearContainer.append(digimonYearText)
-
-//   digimonYearContainer.appendChild(digimonYearText)
-  
-// }

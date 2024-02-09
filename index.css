@@ -80,8 +80,8 @@ nav.navbar {
     background-color: white;
     font-weight: bold;
     display: flex;
-    width: 30%;
-    margin-left: 35%;
+    width: 24%;
+    margin-left: 38%;
 }
 
 /* Left Digimon-types styling */
@@ -131,9 +131,9 @@ nav.navbar {
 }
 
 .digimonNameList:hover {
-    background-color: brown;
+    background-color: rgb(70, 117, 218);
 }
 
 .digimonNameList:active {
-    background-color: blueviolet;
+    background-color: white;
 }
