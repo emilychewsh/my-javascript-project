@@ -18,7 +18,7 @@ async function initialise() {
       btn.className = "digimonNameList"
       btn.innerText = element.name
       btn.id = element.id
-      btn.addEventListener("click", getDigimon)
+      btn.addEventListener("mouseover", getDigimon)
       digimonList.appendChild(btn)
     });
     }
@@ -104,8 +104,9 @@ function getDigimon(event){
   })
 }
 
+//Fx for rendering Names
 function renderDigimonName (object) {
-  const digimonName = object.name
+  const digimonName = object.name.toUpperCase()
   console.log(object)
   const digimonNameContainer = document.querySelector("#digimonName")
   digimonNameContainer.innerHTML = ""

@@ -15,9 +15,7 @@ body {
 
 /* Navigation Bar */
 nav.navbar {
-    /* margin-top: -8px; */
     border-top: rgb(211, 211, 211, 0.5) solid;
-    /* border-bottom: rgb(211, 211, 211, 0.5) solid; */
     background-color: rgb(255, 255, 255, 0.8); 
 }
 
@@ -51,7 +49,7 @@ nav.navbar {
 }
 
 
-/* Left container to display Digimon Info */
+/* Left container */
 #left-digimon-info {
     width: 50%;
     height: 780px;
@@ -59,10 +57,12 @@ nav.navbar {
 
 }
 
+/* Hide Left container until event triggered */
 .none {
     opacity: 0;
 }
 
+/* Digimon Image styling */
 #left-digimon-info img {
     width: 300px;
     height: 300px;
@@ -72,6 +72,17 @@ nav.navbar {
     margin-bottom: 30px;
 }
 
+/* Left Digimon-names styling */
+#digimonName {
+    margin: 5px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    font-weight: bold;
+}
+
+/* Left Digimon-year styling */
 #yearReleased {
     margin: 20px;
     border: 1px solid black;
@@ -102,7 +113,7 @@ nav.navbar {
     padding: 10px;
     background-color: white;
     overflow-y: auto;
-    max-height: 280px;
+    max-height: 260px;
 }
 
 
@@ -124,10 +135,6 @@ nav.navbar {
     padding: 5px;
     text-align: center;
     background-color: rgba(177, 222, 235, 0.8);
-}
-
-.digimonNameList:focus {
-    background-color: white;
 }
 
 .digimonNameList:hover {
