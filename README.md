@@ -26,4 +26,4 @@ Please note: DAPI is an free Digimon API, it uses data from official and fan bas
 Credit: Background image is sourced from https://www.deviantart.com/greenmapple17/art/Digimon-Adventure-Tri-Minimalist-Wallpaper-533783505 
 
 ## A Quick GIF Demo of Digimon Dex!
-![digimondexdemo](images/digimon-dex-demo.gif.gif)
+![digimondexdemo](./images/digimon-dex-demo.gif)
