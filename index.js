@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", initialise);
 
 const digimonList = document.querySelector("#digimon-list")
 
+const digimonInfoLeftContainer = document.querySelector("#left-digimon-info")
+
 // Initialise async function
 // Creating Scrollable 100 Digimon names on Right of page 
 async function initialise() {
@@ -33,6 +35,8 @@ async function initialise() {
     filterDigimons = digimons.filter((digimon) => {
       return digimon.name.toLowerCase().includes(searchInput.value.toLowerCase())
     })
+    // digimonInfoLeftContainer.innerHTML = "";
+
     digimonList.innerHTML = ""
     FilteredDigimonData()
     })
@@ -99,7 +103,6 @@ function getDigimon(event){
     renderDigimonName(data)
 
     //To remove display box on left unless clicked
-    const digimonInfoLeftContainer = document.querySelector("#left-digimon-info")
     digimonInfoLeftContainer.classList.remove("none")
   })
 }
@@ -151,3 +154,9 @@ function renderDigimonYear(object){
   digimonYearBox.innerHTML = "Year Released: " + "" 
   digimonYearBox.append(digimonYear)
 }
+
+
+
+// fix within refresh and sort - to clear keft digimon data
+// if no digimon found, then dis play no digimon found
+// make refresh button standout
