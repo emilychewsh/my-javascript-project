@@ -30,13 +30,18 @@ async function initialise() {
     // Search digimon in search bar
     const searchInput = document.querySelector("#input")
     const searchBtn = document.querySelector("#searchBtn")
+    const sortBtn = document.querySelector("#sortBtn")
+    const sortBtnOriginalValue = document.querySelector("#sortBtn").innerHTML
 
     searchBtn.addEventListener("click", () => {
     filterDigimons = digimons.filter((digimon) => {
       return digimon.name.toLowerCase().includes(searchInput.value.toLowerCase())
     })
-      console.log(filterDigimons.length)
-    // digimonInfoLeftContainer.innerHTML = "";
+      // digimonInfoLeftContainer.innerHTML = "";
+
+      //Return sort button value to original 
+      sortBtn.innerHTML = sortBtnOriginalValue
+
       if (filterDigimons.length === 0) {
         digimonList.innerHTML = `No Digimon with the name "${searchInput.value}" found. Please try another Digimon!`
       } else {
@@ -49,6 +54,11 @@ async function initialise() {
     const refreshBtn = document.querySelector("#refreshBtn")
     refreshBtn.addEventListener("click", () => {
       filterDigimons = [...digimons]
+
+      //Return sort button value to original
+      sortBtn.innerHTML = sortBtnOriginalValue
+      
+      // digimonInfoLeftContainer.innerHTML = "";
       digimonList.innerHTML = ""
       FilteredDigimonData()
     })
@@ -60,6 +70,7 @@ async function initialise() {
         filterDigimons.sort((a, b) => {
           return a.name.localeCompare(b.name)
         })
+        sortBtn.innerHTML = "Sort " + "&uarr;"
         FilteredDigimonData()
     })
 
@@ -69,6 +80,7 @@ async function initialise() {
       filterDigimons.sort((a, b) => {
         return b.name.localeCompare(a.name)
       })
+      sortBtn.innerHTML = "Sort " + "&darr;"
       FilteredDigimonData()
     })
 
@@ -160,4 +172,3 @@ function renderDigimonYear(object){
 
 
 // fix within refresh and sort - to clear left digimon data
-// if no digimon found, then display no digimon found
