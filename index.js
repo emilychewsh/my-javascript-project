@@ -35,10 +35,14 @@ async function initialise() {
     filterDigimons = digimons.filter((digimon) => {
       return digimon.name.toLowerCase().includes(searchInput.value.toLowerCase())
     })
+      console.log(filterDigimons.length)
     // digimonInfoLeftContainer.innerHTML = "";
-
-    digimonList.innerHTML = ""
-    FilteredDigimonData()
+      if (filterDigimons.length === 0) {
+        digimonList.innerHTML = `No Digimon with the name "${searchInput.value}" found. Please try another Digimon!`
+      } else {
+        digimonList.innerHTML = ""
+        FilteredDigimonData()
+      }
     })
 
     // Refresh Button to reset scroll bar on the right
@@ -110,7 +114,6 @@ function getDigimon(event){
 //Fx for rendering Names
 function renderDigimonName (object) {
   const digimonName = object.name.toUpperCase()
-  console.log(object)
   const digimonNameContainer = document.querySelector("#digimonName")
   digimonNameContainer.innerHTML = ""
   digimonNameContainer.append(digimonName)
@@ -135,7 +138,6 @@ function renderDigimonAttributes(object){
 
 //Fx for rendering Description and find method to look for only english description
 function renderDigimonDesc(object){
-  console.log(object)
   const englishDesc = object.descriptions.find((desc) =>{
     return desc.language === "en_us"
   })
@@ -157,6 +159,5 @@ function renderDigimonYear(object){
 
 
 
-// fix within refresh and sort - to clear keft digimon data
-// if no digimon found, then dis play no digimon found
-// make refresh button standout
+// fix within refresh and sort - to clear left digimon data
+// if no digimon found, then display no digimon found
