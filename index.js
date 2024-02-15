@@ -160,7 +160,7 @@ function renderDigimonTypes(object){
     digimonTypeBox.append(digimonType)
   } else {
     const digimonTypeBox = document.querySelector("#type-box-type")
-    digimonTypeBox.innerHTML = "No type found"
+    digimonTypeBox.innerHTML = "N/A - No type found"
   }
 
 }
@@ -174,7 +174,7 @@ function renderDigimonAttributes(object){
     digimonAttributeBox.append(digimonAttributes)
   } else {
     const digimonAttributeBox = document.querySelector("#type-box-attribute")
-    digimonAttributeBox.innerHTML = "No Attribute found"
+    digimonAttributeBox.innerHTML = "N/A - No Attribute found"
   }
 }
 
@@ -193,7 +193,7 @@ function renderDigimonDesc(object){
   } else {
     const digimonDescBox = document.querySelector("#digimon-description")
     const digimonParagraph = document.createElement("p")
-    digimonParagraph.textContent = "No Description Found"
+    digimonParagraph.textContent = "N/A - No Description Found"
     digimonDescBox.innerHTML = ""
     digimonDescBox.append(digimonParagraph)
   }
