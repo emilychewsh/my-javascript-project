@@ -106,7 +106,7 @@ async function initialise() {
 
 //Fetching 100 Digimon Data from external API 
 async function fetch100Digimons(){
-  const url = "https://digi-api.com/api/v1/digimon?pageSize=100"
+  const url = "https://digi-api.com/api/v1/digimon?pageSize=300"
   const response = await fetch (url)
   const digimonData = await response.json()
   const digimons = digimonData.content
